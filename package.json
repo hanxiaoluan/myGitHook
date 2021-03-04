@@ -1,0 +1,31 @@
+{
+  "name": "my-git-hook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "小白 <1140279968@qq.com>",
+  "license": "MIT",
+  "scripts": {
+      "lint:stylelint":"stylelint \"src/**/*.{vue,less,postcss,css,scss}\" --fix"
+  },
+  "devDependencies": {
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4",
+    "stylelint": "^13.11.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0"
+  },
+  "lint-staged":{
+    "src/**/*.{js,jsx}": [
+        "eslint . --fix", "git add"
+      ],
+      "src/**/*.scss": [
+        "stylelint --syntax scss --fix", "git add"
+      ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
