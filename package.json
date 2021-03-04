@@ -24,6 +24,12 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0"
   },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint"
