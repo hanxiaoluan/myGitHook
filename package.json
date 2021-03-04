@@ -38,6 +38,6 @@
       ]
   },
   "gitHooks": {
-    "pre-commit": "yarn lint:lint-staged"
+    "pre-commit": "yarn lint"
   }
 }
