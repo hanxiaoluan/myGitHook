@@ -25,10 +25,17 @@
     "stylelint-order": "^4.1.0"
   },
   "lint-staged": {
-    "src/**/*.{js,vue}": [
-      "eslint --fix",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,ts,tsx}": [
+        "yarn eslint --fix", "git add"
+      ],
+      "src/**/*.vue": [
+        "yarn eslint --fix",
+        "yarn stylelint --fix",
+         "git add"
+      ],
+      "src/**/*.{scss,less,styl,css,html}": [
+        "stylelint --fix", "git add"
+      ]
   },
   "gitHooks": {
     "pre-commit": "yarn lint:lint-staged"
