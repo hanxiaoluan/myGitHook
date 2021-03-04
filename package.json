@@ -37,7 +37,9 @@
         "stylelint --fix", "git add"
       ]
   },
-  "gitHooks": {
-    "pre-commit": "yarn lint"
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint --ext .js,.vue src"
+    }
   }
 }
